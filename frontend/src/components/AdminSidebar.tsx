@@ -1,8 +1,9 @@
 import {IconType} from "react-icons";
 import {Link,Location,useLocation} from "react-router-dom";
-import {RiCustomerService2Fill, RiDashboardFill, RiShoppingBag3Fill} from "react-icons/ri";
+import {RiDashboardFill, RiShoppingBag3Fill,RiCoupon3Fill} from "react-icons/ri";
 import { AiFillFileText } from "react-icons/ai";
 import { IoIosPeople } from "react-icons/io";
+import { FaChartBar,FaChartLine,FaChartPie,FaStopwatch,FaGamepad} from "react-icons/fa";
 
 const AdminSidebar = () => {
 
@@ -49,25 +50,52 @@ const AdminSidebar = () => {
         <h5>Charts</h5>
         <ul>
           <Li
-            url="/admin/barchart"
+            url="/admin/chart/bar"
             location={location}
-            Icon={RiDashboardFill}
+            Icon={FaChartBar}
             name="Bar"
           />
           <Li
-            url="/admin/piechart"
+            url="/admin/chart/pie"
             location={location}
-            Icon={RiShoppingBag3Fill}
+            Icon={FaChartPie}
             name="Pie"
           />
           <Li
-            url="/admin/linechart"
+            url="/admin/chart/line"
             location={location}
-            Icon={IoIosPeople}
+            Icon={FaChartLine}
             name="Line"
           />
         </ul>
       </div>
+
+      {/* ................Apps............... */}
+
+      <div>
+        <h5>Apps</h5>
+        <ul>
+          <Li
+            url="/admin/app/stopwatch"
+            location={location}
+            Icon={FaStopwatch}
+            name="Stopwatch"
+          />
+          <Li
+            url="/admin/app/coupon"
+            location={location}
+            Icon={RiCoupon3Fill}
+            name="Coupon"
+          />
+          <Li
+            url="/admin/app/Toss"
+            location={location}
+            Icon={FaGamepad}
+            name="Toss"
+          />
+        </ul>
+      </div>
+
     </aside>
   );
 }
