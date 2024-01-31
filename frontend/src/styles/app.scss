@@ -2,69 +2,70 @@
 @import "dashboard";
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
 
-.red{
+.red {
     color: red;
 }
-.purple{
+.purple {
     color: purple;
 }
-.green{
+.green {
     color: green;
 }
 
-.admin-container{
-    @include grid(1fr 4fr,2rem);
+.admin-container {
+    @include grid(1fr 4fr, 2rem);
     height: 100vh;
-    background-color:rgb(177, 177, 177);
-     
-    > aside{
+    background-color: rgb(177, 177, 177);
+
+    > aside {
         width: 100%;
         background-color: white;
         padding: 1rem;
         z-index: 10;
-        overflow-y:auto;
-        &::-webkit-scrollbar{
+        overflow-y: auto;
+        &::-webkit-scrollbar {
             display: none;
         }
-    >div{
-        margin: 2rem 1rem;
-        >h5{
-            @include heading(2px);
-            opacity: 0.8;
-            margin: 1rem 0;
-        }
-        >ul{
-            @include flex(column,unset,unset,0.5rem);
-            list-style: none;
-            >li{
-                padding: 0.5rem 1rem;
-                border-radius: 10px;
-                .a{
-                    color: black;
-                    @include flex(row,unset);
+        > div {
+            margin: 2rem 1rem;
+            > h5 {
+                @include heading(2px);
+                opacity: 0.8;
+                margin: 1rem 0;
+            }
+            > ul {
+                @include flex(column, unset, unset, 0.5rem);
+                list-style: none;
+                > li {
+                    //Extra
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                    padding: 0.5rem 1rem;
+                    border-radius: 10px;
+                    .a {
+                        color: black;
+                        @include flex(row, unset);
+                    }
                 }
             }
         }
     }
 }
-}
-
-
-
